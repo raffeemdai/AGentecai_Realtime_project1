@@ -1,10 +1,10 @@
 # Building the Customer Support AI Project — A Beginner's Story
 
-> **What this guide is based on:** the lecture transcript. The transcript's automatic captions contain a few misspelled technical words, so obvious command names are written in their usual form (for e[...]
+> **What this guide is based on:** the lecture transcript. The transcript's automatic captions contain a few misspelled technical words, so obvious command names are written in their usual form (for e[...)
 
 ## The story: we're opening a workshop
 
-Imagine we're opening a small software workshop. Our goal is to build an **autonomous customer-support resolution platform**: a support assistant that can understand a customer's issue, classify it, i[...]
+Imagine we're opening a small software workshop. Our goal is to build an **autonomous customer-support resolution platform**: a support assistant that can understand a customer's issue, classify it, i[...)
 
 Before building the assistant, we need to prepare our workshop:
 
@@ -164,13 +164,13 @@ On **macOS/Linux**:
 source .venv/bin/activate
 ```
 
-The transcript's spoken activation command was not fully clear, so use the command for your actual terminal. You can also use `uv run ...` for many commands without manually activating the environment[...]
-
-When you are finished working in the virtual environment, deactivate it with:
+When you're finished working in the virtual environment, deactivate it with:
 
 ```bash
 deactivate
 ```
+
+The transcript's spoken activation command was not fully clear, so use the command for your actual terminal. You can also use `uv run ...` for many commands without manually activating the environment[...]
 
 ### Step 6: Add a library
 
@@ -464,6 +464,18 @@ List any missing information instead of guessing.
 ```
 
 The lecturer demonstrates referencing a file directly in the coding assistant rather than copying the whole document into the chat. The exact syntax depends on the editor/assistant, so use its file-re[...]
+
+### Using Claude Code in VS Code
+
+If you want to use Claude Code from inside VS Code, follow these steps:
+
+1. Open VS Code.
+2. In the lower-left corner of the window, click the **Accounts** icon.
+3. Select your GitHub account or sign in to GitHub if prompted.
+4. Open the Command Palette with **Ctrl+Shift+P** on Windows/Linux or **Cmd+Shift+P** on macOS.
+5. Type **Claude Code** in the Command Palette.
+6. Choose the command to open the Claude Code panel or chat window, such as **Claude Code: Open Panel** or **Claude Code: Open Chat**. The exact option name can vary by extension version.
+7. If you do not see the command, install the Claude Code extension from the VS Code Extensions view and sign in again.
 
 **Story version:** `cloud.md` is the architect's blueprint. The AI assistant can help turn that blueprint into a plan and supporting documents, but the team still needs to review the generated work.
 
