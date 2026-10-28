@@ -1,10 +1,10 @@
 # Building the Customer Support AI Project — A Beginner's Story
 
-> **What this guide is based on:** the lecture transcript. The transcript's automatic captions contain a few misspelled technical words, so obvious command names are written in their usual form (for example, `uv`, `LangChain`, `pyproject.toml`, and `README.md`). Where the transcript does not provide an exact command or URL, this guide uses a placeholder instead of guessing.
+> **What this guide is based on:** the lecture transcript. The transcript's automatic captions contain a few misspelled technical words, so obvious command names are written in their usual form (for e[...]
 
 ## The story: we're opening a workshop
 
-Imagine we're opening a small software workshop. Our goal is to build an **autonomous customer-support resolution platform**: a support assistant that can understand a customer's issue, classify it, investigate it, retrieve information, troubleshoot, and take an appropriate action. It should remember conversations for each user. Issues involving finance should be escalated rather than handled casually.
+Imagine we're opening a small software workshop. Our goal is to build an **autonomous customer-support resolution platform**: a support assistant that can understand a customer's issue, classify it, i[...]
 
 Before building the assistant, we need to prepare our workshop:
 
@@ -69,7 +69,7 @@ The lecture says that a description is optional for this initial setup.
 
 ### Step 2: Open a terminal
 
-The lecturer recommends Git Bash for Git commands on Windows. macOS and Linux users can normally use their terminal. The integrated terminal in Cursor or VS Code is also fine, as long as Git is installed.
+The lecturer recommends Git Bash for Git commands on Windows. macOS and Linux users can normally use their terminal. The integrated terminal in Cursor or VS Code is also fine, as long as Git is instal[...]
 
 ### A small vocabulary lesson
 
@@ -88,7 +88,7 @@ The lecturer recommends Git Bash for Git commands on Windows. macOS and Linux us
 
 ## Chapter 3 — Set up Python with `uv`
 
-The lecture chooses **uv** as the Python project/package manager. It can create project files, manage dependencies, and create virtual environments. It also caches downloaded packages, so it can often avoid downloading the same package data repeatedly.
+The lecture chooses **uv** as the Python project/package manager. It can create project files, manage dependencies, and create virtual environments. It also caches downloaded packages, so it can often[...]
 
 Think of `uv` as the workshop's supply manager.
 
@@ -142,7 +142,7 @@ uv venv
 
 This normally creates a `.venv` folder.
 
-**What is a virtual environment?** Imagine each project has its own toolbox. The customer-support project can use the versions of libraries it needs without mixing them with other projects on your computer.
+**What is a virtual environment?** Imagine each project has its own toolbox. The customer-support project can use the versions of libraries it needs without mixing them with other projects on your com[...]
 
 ### Step 5: Activate the environment (optional when using uv commands)
 
@@ -164,7 +164,13 @@ On **macOS/Linux**:
 source .venv/bin/activate
 ```
 
-The transcript's spoken activation command was not fully clear, so use the command for your actual terminal. You can also use `uv run ...` for many commands without manually activating the environment.
+The transcript's spoken activation command was not fully clear, so use the command for your actual terminal. You can also use `uv run ...` for many commands without manually activating the environment[...]
+
+When you are finished working in the virtual environment, deactivate it with:
+
+```bash
+deactivate
+```
 
 ### Step 6: Add a library
 
@@ -186,7 +192,7 @@ Replace `package-name` with the real package you need. Don't install libraries j
 
 ### A note about `uv` and `pip`
 
-The lecture explains that uv is fast partly because it uses a cache and efficient dependency management. A useful nuance: **pip also has a cache**, so it is not accurate to say pip downloads every package from the internet from scratch for every project. uv's speed depends on the task, cache state, and environment.
+The lecture explains that uv is fast partly because it uses a cache and efficient dependency management. A useful nuance: **pip also has a cache**, so it is not accurate to say pip downloads every pac[...]
 
 ---
 
@@ -211,7 +217,7 @@ Update it as the project grows. A recruiter or teammate should be able to open t
 
 Git lets us save meaningful checkpoints and share them with GitHub.
 
-> **Important:** The transcript's early setup steps mix `uv init` with Git initialization. They are different tools: `uv init` initializes a Python project; `git init` initializes Git in a folder. If your folder was not already initialized by another step, run `git init` once.
+> **Important:** The transcript's early setup steps mix `uv init` with Git initialization. They are different tools: `uv init` initializes a Python project; `git init` initializes Git in a folder. If [...]
 
 ### Step 1: Initialize Git if needed
 
@@ -292,7 +298,7 @@ This sends the local `main` branch to GitHub and sets its upstream, so later pus
 
 ## Chapter 6 — Keep `main` safe with branches
 
-The lecture emphasizes that the team should not do day-to-day development directly on `main`. It introduces branches such as `development` and `testing`, with new feature branches created from `development`.
+The lecture emphasizes that the team should not do day-to-day development directly on `main`. It introduces branches such as `development` and `testing`, with new feature branches created from `develo[...]
 
 A simple way to picture it:
 
@@ -372,7 +378,7 @@ git commit -m "Describe the feature"
 git push -u origin feature/short-description
 ```
 
-Then open GitHub and create a pull request **from your feature branch into the team's agreed target branch** (the lecture describes feature work being reviewed into `development`). A push sends commits to GitHub; it does **not always automatically create a pull request**. GitHub may show a prompt or link to help you open one.
+Then open GitHub and create a pull request **from your feature branch into the team's agreed target branch** (the lecture describes feature work being reviewed into `development`). A push sends commit[...]
 
 Do not merge into `main` just because GitHub displays a “Compare & pull request” button. Check the source and target branches first.
 
@@ -413,7 +419,7 @@ __pycache__/
 !.env.example
 ```
 
-Never commit API keys, passwords, access tokens, or other secrets. If a secret was already committed, adding it to `.gitignore` does not erase it from Git history; rotate the secret and follow your team's cleanup procedure.
+Never commit API keys, passwords, access tokens, or other secrets. If a secret was already committed, adding it to `.gitignore` does not erase it from Git history; rotate the secret and follow your te[...]
 
 The lecture's rule is: **check `.gitignore` before staging and pushing code.**
 
@@ -421,7 +427,7 @@ The lecture's rule is: **check `.gitignore` before staging and pushing code.**
 
 ## Chapter 8 — Give the AI coding assistant project instructions
 
-Later in the lecture, the instructor discusses using a project guide called `cloud.md` and asking an AI coding assistant to create supporting files and folders. The exact prompt and all generated contents are not fully captured in the transcript, so this section explains the intent rather than pretending to reproduce the missing prompt.
+Later in the lecture, the instructor discusses using a project guide called `cloud.md` and asking an AI coding assistant to create supporting files and folders. The exact prompt and all generated cont[...]
 
 The idea is to give the assistant one clear source of truth describing:
 
@@ -443,7 +449,7 @@ The lecturer also mentions files such as:
 | `docs/` | A place for supporting documentation, including a Git workflow guide. |
 | `architecture.md` | A description or diagram of the system architecture. |
 
-These are the names mentioned or suggested by the transcript; the transcript does not fully specify the contents of every file. Follow the actual files supplied by your instructor if their names or spelling differ.
+These are the names mentioned or suggested by the transcript; the transcript does not fully specify the contents of every file. Follow the actual files supplied by your instructor if their names or sp[...]
 
 ### Example of the kind of request being made
 
@@ -457,7 +463,7 @@ Do not invent requirements that are not in cloud.md.
 List any missing information instead of guessing.
 ```
 
-The lecturer demonstrates referencing a file directly in the coding assistant rather than copying the whole document into the chat. The exact syntax depends on the editor/assistant, so use its file-reference feature as shown in class.
+The lecturer demonstrates referencing a file directly in the coding assistant rather than copying the whole document into the chat. The exact syntax depends on the editor/assistant, so use its file-re[...]
 
 **Story version:** `cloud.md` is the architect's blueprint. The AI assistant can help turn that blueprint into a plan and supporting documents, but the team still needs to review the generated work.
 
@@ -479,7 +485,7 @@ The intended flow, as described in the transcript, is broadly:
 
 The lecture refers to a “CACD pipeline,” but the acronym is not clearly explained in the captured transcript. Do not assume what it stands for without checking the instructor's project documents.
 
-At this point, the lecture mainly sets up the project, Python environment, GitHub workflow, and AI project guidance. The transcript does **not** provide enough clear, complete code to document the finished customer-support application's implementation.
+At this point, the lecture mainly sets up the project, Python environment, GitHub workflow, and AI project guidance. The transcript does **not** provide enough clear, complete code to document the fin[...]
 
 ---
 
@@ -560,4 +566,4 @@ Use project guidance files to plan the customer-support AI
 - [ ] I did not upload secrets or the `.venv/` folder.
 - [ ] I understand that feature work should be reviewed before it is merged into a stable branch.
 
-**Final lesson:** don't try to memorize every command at once. Remember the story: prepare the workshop, set up the Python tools, save checkpoints with Git, share them with GitHub, and keep experimental work on its own branch.
+**Final lesson:** don't try to memorize every command at once. Remember the story: prepare the workshop, set up the Python tools, save checkpoints with Git, share them with GitHub, and keep experiment[...]
